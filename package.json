@@ -1,0 +1,28 @@
+{
+  "name": "pharmacy-management-system",
+  "version": "1.0.0",
+  "description": "Pharmacy Management & Medical Supply Management System with Owner, Staff, and Dealer portals",
+  "scripts": {
+    "db:start": "cmd /c database\\start-db.bat",
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "backend:install": "npm --prefix backend install",
+    "frontend:install": "npm --prefix frontend install",
+    "backend:dev": "npm --prefix backend run dev",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "backend:seed": "npm --prefix backend run seed",
+    "backend:db-push": "npm --prefix backend run prisma:push",
+    "test": "node test_suite.js"
+  },
+  "keywords": [
+    "pharmacy",
+    "fefo",
+    "inventory",
+    "medical-supply",
+    "react",
+    "express",
+    "postgresql",
+    "prisma"
+  ],
+  "author": "Krisha Pharmacy",
+  "license": "ISC"
+}
