@@ -7,3 +7,4 @@ database/data/
 database/postgres.log
 *.log
 .DS_Store
+.vercel
