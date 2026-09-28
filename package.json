@@ -11,6 +11,7 @@
     "frontend:dev": "npm --prefix frontend run dev",
     "backend:seed": "npm --prefix backend run seed",
     "backend:db-push": "npm --prefix backend run prisma:push",
+    "vercel-build": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install && npm --prefix backend run prisma:generate",
     "test": "node test_suite.js"
   },
   "keywords": [

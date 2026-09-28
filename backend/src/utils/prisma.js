@@ -1,5 +1,12 @@
-// Pure Supabase Cloud ORM Client
-// Connects directly to Supabase via @supabase/supabase-js without local PostgreSQL or Prisma engine.
-const supabaseDb = require('./supabaseDb');
+const { PrismaClient } = require('@prisma/client');
 
-module.exports = supabaseDb;
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL || 'postgresql://postgres@127.0.0.1:5433/pharmacy_db?schema=public'
+    }
+  }
+});
+
+module.exports = prisma;
+

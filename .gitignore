@@ -1,1 +1,9 @@
-.env echo node_modules/
+node_modules/
+.env
+.env.local
+.env.*.local
+frontend/dist/
+database/data/
+database/postgres.log
+*.log
+.DS_Store

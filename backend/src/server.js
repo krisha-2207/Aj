@@ -67,10 +67,15 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(` Pharmacy Management Server running on port ${PORT}`);
-  console.log(` Health check: http://localhost:${PORT}/api/health`);
-  console.log(` Database: Supabase Cloud (${process.env.SUPABASE_URL || 'Connected'})`);
-  console.log(`=======================================================`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(` Pharmacy Management Server running on port ${PORT}`);
+    console.log(` Health check: http://localhost:${PORT}/api/health`);
+    console.log(` Database: Connected`);
+    console.log(`=======================================================`);
+  });
+}
+
+module.exports = app;
+
